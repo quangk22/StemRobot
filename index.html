@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Stem Robot</title>
+  </head>
+  <body>
+    <span class="status">Đã kết nối</span>
+    <div class="container">
+      <a href="search/"><button class="btn">SEARCH</button></a>
+      <a href="ngatketnoi/"> <button class="btn">NGẮT KẾT NỐI</button></a>
+      <a href="update/"><button class="btn">UPDATE</button></a>
+    </div>
+    <div class="grid-btn">
+      <a href="./cam_bien/cam_bien.html"
+        ><button class="btn">CẢM BIẾN</button></a
+      >
+      <a href="./lap_trinh/lap_trinh.html"
+        ><button class="btn">LẬP TRÌNH</button></a
+      >
+      <select name="" id="" class="btn">
+        <option class="btn-option" value="">CHƯƠNG TRÌNH 1</option>
+        <option class="btn-option" value="">CHƯƠNG TRÌNH 2</option>
+        <option class="btn-option" value="">CHƯƠNG TRÌNH 3</option>
+        <option class="btn-option" value="">CHƯƠNG TRÌNH 4</option>
+      </select>
+      <a href="./dong_co/dong_co.html"><button class="btn">ĐỘNG CƠ</button></a>
+      <a href="tung_buoc/A"><button class="btn">TỪNG BƯỚC</button></a>
+
+      <a href="./can_bang/can_bang.html">
+        <button class="btn">CÂN BẰNG</button></a
+      >
+      <a href="./toc_do/toc_do.html"><button class="btn">TỐC ĐỘ</button></a>
+      <button class="btn stop" onclick="stopTimer()">STOP</button>
+      <button class="btn run" onclick="startTimer()">RUN</button>
+    </div>
+    <div class="box-time">
+      <input
+        type="checkbox"
+        id="checkbox"
+        class="checkbox"
+        onchange="toggleTimeDisplay()"
+      />
+      <label for="checkbox">Tính giờ</label>
+    </div>
+    <div class="">
+      <div class="time">00:00:00:00</div>
+      <div class="status-car">ĐÃ DỪNG</div>
+    </div>
+
+    <script>
+      function toggleTimeDisplay() {
+        var checkbox = document.getElementById("checkbox");
+        var timeContainer = document.querySelector(".time");
+        if (checkbox.checked) {
+          timeContainer.style.display = "block";
+        } else {
+          timeContainer.style.display = "none";
+        }
+      }
+    </script>
+    <script>
+      let timerInterval;
+      let running = false;
+      let milliseconds = 0;
+
+      function startOrStopTimer() {
+        if (running) {
+          stopTimer();
+        } else {
+          startTimer();
+        }
+      }
+
+      function startTimer() {
+        if (!running) {
+          let seconds = 0;
+          timerInterval = setInterval(function () {
+            milliseconds++;
+            if (milliseconds == 100) {
+              milliseconds = 0;
+              seconds++;
+            }
+            updateTime(seconds, milliseconds);
+          }, 10);
+          document.querySelector(".status-car").textContent = "ĐANG CHẠY";
+          running = true;
+        }
+      }
+
+      function stopTimer() {
+        clearInterval(timerInterval);
+        document.querySelector(".status-car").textContent = "ĐÃ DỪNG";
+        running = false;
+      }
+
+      function updateTime(seconds, milliseconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const remainingSeconds = seconds % 60;
+
+        const formattedTime =
+          pad(hours) +
+          ":" +
+          pad(minutes) +
+          ":" +
+          pad(remainingSeconds) +
+          ":" +
+          pad(milliseconds);
+        document.querySelector(".time").textContent = formattedTime;
+      }
+
+      function pad(number) {
+        return number.toString().padStart(2, "0");
+      }
+    </script>
+  </body>
+</html>

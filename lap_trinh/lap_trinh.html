@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Stem Robot</title>
+  </head>
+  <body>
+    <span class="status">Đã kết nối</span>
+    <div class="container">
+      <a href="search/"><button class="btn">SEARCH</button></a>
+      <a href="ngatketnoi/"> <button class="btn">NGẮT KẾT NỐI</button></a>
+      <a href="update/"><button class="btn">UPDATE</button></a>
+    </div>
+
+    <div class="grid-btn">
+      <select class="btn">
+        <option value="">NONE</option>
+        <option value="moi">CHƯƠNG TRÌNH MỚI</option>
+        <option value="xoa">XOÁ BƯỚC</option>
+        <option value="sua">SỬA BƯỚC</option>
+        <option value="chen">CHÈN BƯỚC</option>
+        <option value="them">THÊM BƯỚC</option>
+        <option value="xem">XEM</option>
+      </select>
+      <a href="../index.html"><button class="btn">CANCEL</button></a>
+    </div>
+    <div class="xoa_buoc">
+      <div class="">Tổng số 2 bước</div>
+
+      <div class="display">
+        <span>Bước</span>
+        <select class="btn">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+          <option value="">4</option>
+        </select>
+      </div>
+      <div class="display">
+        <span>Lệnh</span>
+        <select class="btn">
+          <option value="">RẼ PHẢI_QĐ</option>
+          <option value="">RẼ PHẢI_CB</option>
+          <option value="">LÙI PHẢI_QĐ</option>
+          <option value="">LÙI PHẢI_CB</option>
+          <option value="">LÙI_QĐ</option>
+          <option value="">DỪNG_TG</option>
+          <option value="">CHỈNH XE</option>
+          <option value="">SERV01</option>
+          <option value="">SERV02</option>
+        </select>
+      </div>
+      <div class="display start">
+        <span>Gia số</span>
+        <input type="number" class="input" />
+      </div>
+      <div class="display start">
+        <span>Gia tốc</span>
+        <input type="number" value="0" class="input" />
+        <span>+200</span>
+      </div>
+      <div class="display">
+        <button class="btn"><a href="#">OK</a></button>
+        <button class="btn"><a href="./lap_trinh.html">BACK</a></button>
+      </div>
+    </div>
+
+    <div class="chen_buoc">
+      <div class="">Tổng số 2 bước</div>
+      <div class="display">
+        <span>Bước</span>
+        <select class="btn">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+          <option value="">4</option>
+        </select>
+      </div>
+      <div class="display">
+        <span>Lệnh</span>
+        <select class="btn">
+          <option value="">RẼ PHẢI_QĐ</option>
+          <option value="">RẼ PHẢI_CB</option>
+          <option value="">LÙI PHẢI_QĐ</option>
+          <option value="">LÙI PHẢI_CB</option>
+          <option value="">LÙI_QĐ</option>
+          <option value="">DỪNG_TG</option>
+          <option value="">CHỈNH XE</option>
+          <option value="">SERV01</option>
+          <option value="">SERV02</option>
+        </select>
+      </div>
+      <div class="select">
+        <div class="">
+          <span>S1</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S2</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S3</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S4</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S5</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+      </div>
+      <div class="display start">
+        <span>Gia tốc</span>
+        <input type="number" value="0" class="input" />
+        <span>+200</span>
+      </div>
+      <div class="display">
+        <button class="btn"><a href="#">OK</a></button>
+        <button class="btn"><a href="./lap_trinh.html">BACK</a></button>
+      </div>
+    </div>
+
+    <div class="sua_buoc">
+      <div class="">sửa bước</div>
+      <div class="">Tổng số 2 bước</div>
+      <div class="display">
+        <span>Bước</span>
+        <select class="btn">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+          <option value="">4</option>
+        </select>
+      </div>
+      <div class="display">
+        <span>Lệnh</span>
+        <select class="btn">
+          <option value="">RẼ PHẢI_QĐ</option>
+          <option value="">RẼ PHẢI_CB</option>
+          <option value="">LÙI PHẢI_QĐ</option>
+          <option value="">LÙI PHẢI_CB</option>
+          <option value="">LÙI_QĐ</option>
+          <option value="">DỪNG_TG</option>
+          <option value="">CHỈNH XE</option>
+          <option value="">SERV01</option>
+          <option value="">SERV02</option>
+        </select>
+      </div>
+      <div class="select">
+        <div class="">
+          <span>S1</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S2</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S3</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S4</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S5</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+      </div>
+      <div class="display start">
+        <span>Gia tốc</span>
+        <input type="number" value="0" class="input" />
+        <span>+200</span>
+      </div>
+      <div class="display">
+        <button class="btn"><a href="#">OK</a></button>
+        <button class="btn"><a href="./lap_trinh.html">BACK</a></button>
+      </div>
+    </div>
+
+    <div class="them_buoc">
+      <div class="">Thêm bước</div>
+      <div class="">Tổng số 2 bước</div>
+      <div class="display">
+        <span>Bước</span>
+        <select class="btn">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+          <option value="">4</option>
+        </select>
+      </div>
+      <div class="display">
+        <span>Lệnh</span>
+        <select class="btn">
+          <option value="">RẼ PHẢI_QĐ</option>
+          <option value="">RẼ PHẢI_CB</option>
+          <option value="">LÙI PHẢI_QĐ</option>
+          <option value="">LÙI PHẢI_CB</option>
+          <option value="">LÙI_QĐ</option>
+          <option value="">DỪNG_TG</option>
+          <option value="">CHỈNH XE</option>
+          <option value="">SERV01</option>
+          <option value="">SERV02</option>
+        </select>
+      </div>
+      <div class="select">
+        <div class="">
+          <span>S1</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S2</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S3</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S4</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+        <div class="">
+          <span>S5</span>
+          <select class="btn select_btn">
+            <option value="">T</option>
+            <option value="">Đ</option>
+            <option value="">X</option>
+          </select>
+        </div>
+      </div>
+      <div class="display start">
+        <span>Gia tốc</span>
+        <input type="number" value="0" class="input" />
+        <span>+200</span>
+      </div>
+      <div class="display">
+        <button class="btn"><a href="#">OK</a></button>
+        <button class="btn"><a href="./lap_trinh.html">BACK</a></button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Lắng nghe sự kiện khi thay đổi select
+        document
+          .querySelector(".grid-btn select")
+          .addEventListener("change", function () {
+            // Lấy giá trị của option được chọn
+            var selectedOption = this.value;
+
+            // Lấy phần tử view
+            var xoa_buoc = document.querySelector(".xoa_buoc");
+            var chen_buoc = document.querySelector(".chen_buoc");
+            var sua_buoc = document.querySelector(".sua_buoc");
+            var them_buoc = document.querySelector(".them_buoc");
+
+            // Ẩn tất cả các phần tử view trước khi hiển thị
+            xoa_buoc.style.display = "none";
+            chen_buoc.style.display = "none";
+            sua_buoc.style.display = "none";
+            them_buoc.style.display = "none";
+
+
+            // Hiển thị phần tử view tương ứng
+            switch (selectedOption) {
+              case "xoa":
+                xoa_buoc.style.display = "block";
+                break;
+              case "chen":
+                chen_buoc.style.display = "block";
+                break;
+              case "sua":
+                sua_buoc.style.display = "block";
+                break;
+              case "them":
+              them_buoc.style.display = "block";
+                break;
+              default:
+                break;
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

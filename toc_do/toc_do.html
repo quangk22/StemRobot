@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span class="status">Đã kết nối</span>
+    <div class="container">
+      <a href="search/"><button class="btn">SEARCH</button></a>
+      <a href="ngatketnoi/"> <button class="btn">NGẮT KẾT NỐI</button></a>
+      <a href="update/"><button class="btn">UPDATE</button></a>
+    </div>
+    <div class="speek">
+      <div class="title">CHỈNH TỐC ĐỘ</div>
+      <input
+        class="slider"
+        type="range"
+        min="1"
+        max="300"
+        value="166"
+        id="slider"
+      />
+      <span><b id="value">166</b></span>
+    </div>
+    <div class="box-btn">
+      <a href="toc_do/A"><button class="btn">OK</button></a>
+      <a href="../index.html"><button class="btn">CANCEL</button></a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var slider = document.getElementById("slider");
+        var output = document.getElementById("value");
+        output.innerHTML = slider.value;
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+        };
+      });
+    </script>
+  </body>
+</html>

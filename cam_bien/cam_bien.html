@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Cảm biến</title>
+  </head>
+  <body>
+    <span class="status">Đã kết nối</span>
+    <div class="container">
+      <a href="search/"><button class="btn">SEARCH</button></a>
+      <a href="ngatketnoi/"> <button class="btn">NGẮT KẾT NỐI</button></a>
+      <a href="update/"><button class="btn">UPDATE</button></a>
+    </div>
+    <div class="">
+      <div class="">
+        <div class="box-sensor">
+          <span>IR</span>
+          <div class="sensors">
+            <div class="sensor-led">
+              <div class="sensor-led-item">
+                <span>S1</span>
+                <div class="box-led" id="led1"></div>
+              </div>
+              <div class="sensor-led-item">
+                <span>S2</span>
+                <div class="box-led" id="led2"></div>
+              </div>
+              <div class="sensor-led-item">
+                <span>S3</span>
+                <div class="box-led" id="led3"></div>
+              </div>
+              <div class="sensor-led-item">
+                <span>S4</span>
+                <div class="box-led" id="led4"></div>
+              </div>
+              <div class="sensor-led-item">
+                <span>S5</span>
+                <div class="box-led" id="led5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="do-line">
+          <span>DÒ LINE</span>
+          <div>
+            <input type="checkbox" class="checkbox sensor-3-checkbox" />
+            <span>3 CẢM BIẾN</span>
+          </div>
+
+          <div>
+            <input type="checkbox" class="checkbox analog-checkbox" />
+            <span>ANALOG</span>
+          </div>
+        </div>
+
+        <div class="lech-sieuam">
+          <span>Lệch: -10</span>
+          <span>Siêu âm: -24</span>
+        </div>
+
+        <div class="sensor-btn">
+          <a href="#"><button class="btn">SÂN</button></a>
+          <a href="../index.html"><button class="btn">BACK</button></a>
+        </div>
+
+        <div class="select-ground">
+          <a href="#"><button class="btn">ĐEN</button></a>
+          <a href="#"><button class="btn">CANCEL</button></a>
+          <a href="#"><button class="btn">TRẮNG</button></a>
+        </div>
+
+        <div class="sensor-description">
+          <span>ĐÃ DỪNG</span>
+          <span>*1#K</span>
+          <span>
+            CHUYỂN ROBOT ĐẾN MÀU ĐEN, NHẤN "ĐEN" CHUYỂN ROBOT ĐẾN MÀU TRẮNG,
+            NHẤN "TRẮNG"
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var ledColors = [true, false, true, false, true]; // Mảng lưu trạng thái màu: true - Xanh, false - Vàng
+
+    // Hàm thay đổi màu của LED
+    function changeLedColor() {
+      var leds = document.querySelectorAll(".box-led");
+      leds.forEach(function (led, index) {
+        if (ledColors[index]) {
+          led.style.backgroundColor = "blue"; // Nếu ledColors[index] là true, đặt màu Xanh
+        } else {
+          led.style.backgroundColor = "yellow"; // Nếu ledColors[index] là false, đặt màu Vàng
+        }
+      });
+    }
+
+    // Gọi hàm changeLedColor để cập nhật màu ban đầu
+    changeLedColor();
+
+    // Hàm thực hiện request AJAX định kỳ
+    setInterval(function () {
+      // Tạo một request mới
+      var xhr = new XMLHttpRequest();
+      // Gửi request đến một URL cụ thể
+      xhr.open("GET", "bỏ API", true);
+      // Xử lý dữ liệu nhận được từ server
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          // Xử lý dữ liệu nhận được từ server và cập nhật trạng thái màu của leds
+          var response = JSON.parse(xhr.responseText);
+          ledColors = response.ledColors;
+          // Sau khi cập nhật dữ liệu, gọi hàm changeLedColor để cập nhật màu của các led
+          changeLedColor();
+        }
+      };
+      // Gửi request
+      xhr.send();
+    }, 5000); // Request sẽ được gửi sau mỗi 5 giây (5000 milliseconds)
+  </script>
+</html>
