@@ -262,3 +262,18 @@ body {
   display: none;
   margin-top: 25px;
 }
+.chuong_trinh_moi {
+  display: none;
+}
+.chuong_trinh {
+  margin-top: 50px;
+  width: 200px;
+}
+.box {
+  display: flex;
+  gap: 50px;
+  margin-top: 25px;
+}
+.xoa_Ct {
+  margin-top: 50px;
+}
