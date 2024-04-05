@@ -9,7 +9,7 @@
   <body>
     <span class="status">Đã kết nối</span>
     <div class="container">
-      <a href="update/"><button class="btn">UPDATE</button></a>
+      <a href="*1#U"><button class="btn">UPDATE</button></a>
     </div>
 
     <div class="grid-btn">
@@ -106,9 +106,11 @@
         </div>
       </div>
       <!--  -->
-      <div class="display start">
-        <span>Gia số</span>
-        <input type="number" class="input" />
+      <div class="gia_so">
+        <div class="display start">
+          <span>Gia số</span>
+          <input type="number" class="input" />
+        </div>
       </div>
       <div class="display start">
         <span>Gia tốc</span>
@@ -203,9 +205,11 @@
         </div>
       </div>
       <!--  -->
-      <div class="display start">
-        <span>Gia số</span>
-        <input type="number" class="input" />
+      <div class="gia_so_chen">
+        <div class="display start">
+          <span>Gia số</span>
+          <input type="number" class="input" />
+        </div>
       </div>
       <div class="display start">
         <span>Gia tốc</span>
@@ -302,9 +306,11 @@
         </div>
       </div>
       <!--  -->
-      <div class="display start">
-        <span>Gia số</span>
-        <input type="number" class="input" />
+      <div class="gia_so_sua">
+        <div class="display start">
+          <span>Gia số</span>
+          <input type="number" class="input" />
+        </div>
       </div>
       <div class="display start">
         <span>Gia tốc</span>
@@ -400,9 +406,11 @@
         </div>
       </div>
       <!--  -->
-      <div class="display start">
-        <span>Gia số</span>
-        <input type="number" class="input" />
+      <div class="gia_so_them">
+        <div class="display start">
+          <span>Gia số</span>
+          <input type="number" class="input" />
+        </div>
       </div>
       <div class="display start">
         <span>Gia tốc</span>
@@ -473,10 +481,13 @@
                   .addEventListener("change", function () {
                     var selectedOption = this.value;
                     var selectDiv = document.querySelector(".s12345");
+                    var gia_so = document.querySelector(".gia_so");
                     if (selectedOption === "CB") {
                       selectDiv.style.display = "block";
+                      gia_so.style.display = "none";
                     } else {
                       selectDiv.style.display = "none";
+                      gia_so.style.display = "block";
                     }
                   });
                 break;
@@ -488,10 +499,13 @@
                   .addEventListener("change", function () {
                     var selectedOption = this.value;
                     var selectDiv = document.querySelector(".s2");
+                    var gia_so = document.querySelector(".gia_so_chen");
                     if (selectedOption === "CB") {
                       selectDiv.style.display = "block";
+                      gia_so.style.display = "none";
                     } else {
                       selectDiv.style.display = "none";
+                      gia_so.style.display = "block";
                     }
                   });
                 break;
@@ -502,10 +516,13 @@
                   .addEventListener("change", function () {
                     var selectedOption = this.value;
                     var selectDiv = document.querySelector(".s1");
+                    var gia_so = document.querySelector(".gia_so_sua");
                     if (selectedOption === "CB") {
                       selectDiv.style.display = "block";
+                      gia_so.style.display = "none";
                     } else {
                       selectDiv.style.display = "none";
+                      gia_so.style.display = "block";
                     }
                   });
                 break;
@@ -516,10 +533,13 @@
                   .addEventListener("change", function () {
                     var selectedOption = this.value;
                     var selectDiv = document.querySelector(".s4");
+                    var gia_so = document.querySelector(".gia_so_them");
                     if (selectedOption === "CB") {
                       selectDiv.style.display = "block";
+                      gia_so.style.display = "none";
                     } else {
                       selectDiv.style.display = "none";
+                      gia_so.style.display = "block";
                     }
                   });
                 break;
