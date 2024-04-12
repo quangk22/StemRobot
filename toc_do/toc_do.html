@@ -9,7 +9,7 @@
   <body>
     <span class="status">Đã kết nối</span>
     <div class="container">
-      <a href="*1#U"><button class="btn">UPDATE</button></a>
+      <button class="btn" onclick="updateData()">UPDATE</button>
     </div>
     <div class="speek">
       <div class="title">CHỈNH TỐC ĐỘ</div>
@@ -27,7 +27,7 @@
       <a href="toc_do/A"><button class="btn">OK</button></a>
       <a href="../index.html"><button class="btn">CANCEL</button></a>
     </div>
-
+    <script src="../ajax.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var slider = document.getElementById("slider");

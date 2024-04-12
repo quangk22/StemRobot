@@ -9,7 +9,7 @@
   <body>
     <span class="status">Đã kết nối</span>
     <div class="container">
-      <a href="*1#U"><button class="btn">UPDATE</button></a>
+      <button class="btn" onclick="updateData()">UPDATE</button>
     </div>
 
     <div class="grid-btn">
@@ -429,6 +429,7 @@
         <option value="3">CHƯƠNG TRÌNH 3</option>
         <option value="4">CHƯƠNG TRÌNH 4</option>
       </select>
+
       <div class="xoa_Ct">
         <span>CHẮC CHẮN XÓA CHƯƠNG TRÌNH <span id="value">1</span></span>
         <div class="box">
@@ -441,13 +442,14 @@
         </div>
       </div>
     </div>
-
+    <script src="../ajax.js"></script>
     <script>
       function changeValue() {
         var selectElement = document.querySelector(".chuong_trinh");
         var valueElement = document.getElementById("value");
         valueElement.textContent = selectElement.value;
       }
+
       //
       document.addEventListener("DOMContentLoaded", function () {
         // Lắng nghe sự kiện khi thay đổi select

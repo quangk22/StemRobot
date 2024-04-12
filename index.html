@@ -9,7 +9,7 @@
   <body>
     <span class="status">Đã kết nối</span>
     <div class="container">
-      <a href="*1#U"><button class="btn">UPDATE</button></a>
+      <button class="btn" onclick="updateData()">UPDATE</button>
     </div>
     <div class="grid-btn">
       <a href="./cam_bien/cam_bien.html"
@@ -18,11 +18,8 @@
       <a href="./lap_trinh/lap_trinh.html"
         ><button class="btn">LẬP TRÌNH</button></a
       >
-      <select name="" id="" class="btn">
-        <option class="btn-option" value="">CHƯƠNG TRÌNH 1</option>
-        <option class="btn-option" value="">CHƯƠNG TRÌNH 2</option>
-        <option class="btn-option" value="">CHƯƠNG TRÌNH 3</option>
-        <option class="btn-option" value="">CHƯƠNG TRÌNH 4</option>
+      <select name="programs" id="programs" class="btn">
+        <option class="btn-option" value="">Loading...</option>
       </select>
       <a href="./dong_co/dong_co.html"><button class="btn">ĐỘNG CƠ</button></a>
       <a href="tung_buoc/A"><button class="btn">TỪNG BƯỚC</button></a>
@@ -31,8 +28,8 @@
         <button class="btn">CÂN BẰNG</button></a
       >
       <a href="./toc_do/toc_do.html"><button class="btn">TỐC ĐỘ</button></a>
-      <button class="btn stop" onclick="stopTimer()">STOP</button>
-      <button class="btn run" onclick="startTimer()">RUN</button>
+      <button class="btn stop" onclick="stopClock()">STOP</button>
+      <button class="btn run" onclick="checkClockStatus()">RUN</button>
     </div>
     <div class="box-time">
       <input
@@ -47,7 +44,7 @@
       <div class="time">00:00:00:00</div>
       <div class="status-car">ĐÃ DỪNG</div>
     </div>
-
+    <script src="ajax.js"></script>
     <script>
       function toggleTimeDisplay() {
         var checkbox = document.getElementById("checkbox");
@@ -59,60 +56,6 @@
         }
       }
     </script>
-    <script>
-      let timerInterval;
-      let running = false;
-      let milliseconds = 0;
-
-      function startOrStopTimer() {
-        if (running) {
-          stopTimer();
-        } else {
-          startTimer();
-        }
-      }
-
-      function startTimer() {
-        if (!running) {
-          let seconds = 0;
-          timerInterval = setInterval(function () {
-            milliseconds++;
-            if (milliseconds == 100) {
-              milliseconds = 0;
-              seconds++;
-            }
-            updateTime(seconds, milliseconds);
-          }, 10);
-          document.querySelector(".status-car").textContent = "ĐANG CHẠY";
-          running = true;
-        }
-      }
-
-      function stopTimer() {
-        clearInterval(timerInterval);
-        document.querySelector(".status-car").textContent = "ĐÃ DỪNG";
-        running = false;
-      }
-
-      function updateTime(seconds, milliseconds) {
-        const hours = Math.floor(seconds / 3600);
-        const minutes = Math.floor((seconds % 3600) / 60);
-        const remainingSeconds = seconds % 60;
-
-        const formattedTime =
-          pad(hours) +
-          ":" +
-          pad(minutes) +
-          ":" +
-          pad(remainingSeconds) +
-          ":" +
-          pad(milliseconds);
-        document.querySelector(".time").textContent = formattedTime;
-      }
-
-      function pad(number) {
-        return number.toString().padStart(2, "0");
-      }
-    </script>
+    <script></script>
   </body>
 </html>

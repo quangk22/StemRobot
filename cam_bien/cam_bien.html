@@ -9,7 +9,7 @@
   <body>
     <span class="status">Đã kết nối</span>
     <div class="container">
-      <a href="*1#U"><button class="btn">UPDATE</button></a>
+      <button class="btn" onclick="updateData()">UPDATE</button>
     </div>
     <div class="">
       <div class="">
@@ -65,9 +65,9 @@
         </div>
 
         <div class="select-ground">
-          <a href="#"><button class="btn">ĐEN</button></a>
+          <button class="btn" onclick="postDataBlack()">ĐEN</button>
           <a href="#"><button class="btn">CANCEL</button></a>
-          <a href="#"><button class="btn">TRẮNG</button></a>
+          <button class="btn" onclick="postDataWhite()">TRẮNG</button>
         </div>
 
         <div class="sensor-description">
@@ -81,6 +81,8 @@
       </div>
     </div>
   </body>
+  <script src="../ajax.js"></script>
+  <script src="cam_bien.js"></script>
   <script>
     var ledColors = [true, false, true, false, true]; // Mảng lưu trạng thái màu: true - Xanh, false - Vàng
 
