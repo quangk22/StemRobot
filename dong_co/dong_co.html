@@ -22,12 +22,21 @@
       "
     >
       <span style="display: flex; gap: 20px">
-       <a href="dong_co/A"><button class="btn" style="text-wrap: nowrap; padding: 0 2rem">
-        QUAY TRÁI
-      </button></a>
-      <a href="dong_co/A">  <button class="btn" style="text-wrap: nowrap; padding: 0 2rem">
-        QUAY PHẢI
-      </button></a>
+        <button
+          class="btn"
+          style="text-wrap: nowrap; padding: 0 2rem"
+          onclick="sendCommand('Left')"
+        >
+          QUAY TRÁI
+        </button>
+
+        <button
+          class="btn"
+          style="text-wrap: nowrap; padding: 0 2rem"
+          onclick="sendCommand('Right')"
+        >
+          QUAY PHẢI
+        </button>
       </span>
       <a href="../index.html"
         ><button
@@ -39,5 +48,6 @@
       >
     </div>
     <script src="../ajax.js"></script>
+    <script src="dong_co.js"></script>
   </body>
 </html>

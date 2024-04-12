@@ -15,24 +15,29 @@
     <div class="box-speed">
       <div class="balance balance-left">
         <span>TỐC ĐỘ TRÁI</span>
-        <input type="text" value="0" />
+        <input type="text" value="0" id="leftSpeedInput" />
       </div>
 
       <div class="balance balance-middle">
-        <a href="#"><button class="btn">TĂNG TRÁI GIẢM PHẢI</button></a>
-        <a href="#"><button class="btn">TĂNG PHẢI GIẢM TRÁI</button></a>
+        <button class="btn" onclick="increaseDelta()">
+          TĂNG TRÁI GIẢM PHẢI
+        </button>
+        <button class="btn" onclick="decreaseDelta()">
+          TĂNG PHẢI GIẢM TRÁI
+        </button>
       </div>
 
       <div class="balance balance-right">
         <span>TỐC ĐỘ PHẢI</span>
-        <input type="text" value="0" />
+        <input type="text" value="0" id="rightSpeedInput" />
       </div>
     </div>
 
     <div class="balance-btn">
-      <a href="can_bang"><button class="btn">OK</button></a>
-      <a href="../index.html"><button class="btn">CANCEL</button></a>
+      <button class="btn" onclick="sendDelta()">OK</button>
+      <button class="btn"><a href="../index.html">CANCEL</a></button>
     </div>
     <script src="../ajax.js"></script>
+    <script src="can_bang.js"></script>
   </body>
 </html>

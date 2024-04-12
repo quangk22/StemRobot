@@ -25,38 +25,18 @@ function fetchData() {
 // Thiết lập hàm để gọi fetchData() mỗi 100ms
 //
 
-function postDataBlack() {
+function sendCommand(command) {
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "url_of_your_server", true);
+  xhr.open("POST", "http://<ESP8266_IP_ADDRESS>/", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
-        // Xử lý phản hồi từ máy chủ nếu cần
-        console.log(response);
+        console.log("Request successful");
       } else {
         console.error("Request failed:", xhr.status);
       }
     }
   };
-  xhr.send("key=den");
-}
-
-function postDataWhite() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "url_of_your_server", true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
-        // Xử lý phản hồi từ máy chủ nếu cần
-        console.log(response);
-      } else {
-        console.error("Request failed:", xhr.status);
-      }
-    }
-  };
-  xhr.send("key=trang");
+  xhr.send("key=" + command);
 }

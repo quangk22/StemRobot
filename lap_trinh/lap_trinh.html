@@ -118,7 +118,7 @@
         <span>+200</span>
       </div>
       <div class="display">
-        <button class="btn"><a href="#">OK</a></button>
+        <button class="btn" onclick="XoaBuoc()">OK</button>
         <button class="btn"><a href="./lap_trinh.html">BACK</a></button>
       </div>
     </div>
@@ -433,9 +433,7 @@
       <div class="xoa_Ct">
         <span>CHẮC CHẮN XÓA CHƯƠNG TRÌNH <span id="value">1</span></span>
         <div class="box">
-          <button class="btn">
-            <a href="../lap_trinh/lap_trinh.html">YES</a>
-          </button>
+          <button class="btn" onclick="sendCommand('moi')">YES</button>
           <button class="btn">
             <a href="../lap_trinh/lap_trinh.html">CANCEL</a>
           </button>
@@ -443,6 +441,7 @@
       </div>
     </div>
     <script src="../ajax.js"></script>
+    <script src="chuong_trinh.js"></script>
     <script>
       function changeValue() {
         var selectElement = document.querySelector(".chuong_trinh");
